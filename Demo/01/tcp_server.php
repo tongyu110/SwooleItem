@@ -3,7 +3,7 @@
 //创建Server对象，监听 127.0.0.1:9501端口
 $serv = new swoole_server("127.0.0.1", 9501); 
 
-$serv->on('set',[
+$serv->set([
     'worker_num'=>8,        // worker 进程数 ， CPU 核的 1-4 倍
     'max_request'=>128,     // 每个进程处理的最大用于数
 ]);
