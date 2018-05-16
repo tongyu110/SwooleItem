@@ -10,7 +10,6 @@
         });
         
         $http->start();
-
         
         function getTplContent() {
             $file = __ROOT__ . '/Template/index.html';
