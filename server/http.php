@@ -23,5 +23,5 @@ $http->on('request', function ($request, $response) {
 $http->start();
 
 function getTplContent() {
-    return "hello Swoole \n";
+    return "hello Swoole test \n";
 }
