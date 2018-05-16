@@ -12,7 +12,7 @@ $http->set([
 
 $http->on('request', function ($request, $response) {
     //var_dump($request->get, $request->post);
-    
+    echo '111';    
     include __ROOT__.'/test.php';
     
     $response->header("Content-Type", "text/html; charset=utf-8");
@@ -21,6 +21,7 @@ $http->on('request', function ($request, $response) {
 $http->start();
 
 function getTplContent() {
+    return false;
     $file = __ROOT__ . '/Template/index.html';
     $content = file_get_contents($file);
     return $content;
