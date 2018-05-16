@@ -1,5 +1,7 @@
 <?php
 
+include __ROOT__.'/test.php';
+
 echo 'shell start';
 define('__ROOT__', realpath('.'));
 $http = new swoole_http_server("127.0.0.1", 9501);
@@ -8,14 +10,12 @@ $http->set([
     'max_request'=>50
 ]);
 
-include __ROOT__.'/test_shellstart.php';
-
 $http->on('WorkerStart', function ($serv, $worker_id){
-    include __ROOT__.'/test_WorkerStart.php';
+    echo "WorkerStart \n";
 });
 
 $http->on('request', function ($request, $response) {
-    //var_dump($request->get, $request->post);
+    getTest();
     include __ROOT__.'/test_request.php';
     $response->header("Content-Type", "text/html; charset=utf-8");
     $response->end(getTplContent());
