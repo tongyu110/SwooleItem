@@ -10,7 +10,7 @@ $http->set([
 
 include __ROOT__.'/test_shellstart.php';
 
-$serv->on('WorkerStart', function ($serv, $worker_id){
+$http->on('WorkerStart', function ($serv, $worker_id){
     include __ROOT__.'/test_WorkerStart.php';
 });
 
