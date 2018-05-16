@@ -1,9 +1,11 @@
 <?php
 
-include __ROOT__.'/test.php';
+
 
 echo 'shell start';
 define('__ROOT__', realpath('.'));
+include __ROOT__.'/test.php';
+
 $http = new swoole_http_server("127.0.0.1", 9501);
 $http->set([
     'worker_num'=>4,
