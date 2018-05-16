@@ -1,8 +1,8 @@
 <?php
 
 echo 'shell start';
-include __ROOT__.'/test_shellstart.php';
 define('__ROOT__', realpath('.'));
+include __ROOT__.'/test_shellstart.php';
 $http = new swoole_http_server("127.0.0.1", 9501);
 $http->set([
     'worker_num'=>4,
