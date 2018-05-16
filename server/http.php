@@ -12,7 +12,9 @@ $http->set([
 
 $http->on('request', function ($request, $response) {
     //var_dump($request->get, $request->post);
-    echo 'echo request';
+    
+    include __ROOT__.'/test.php';
+    
     $response->header("Content-Type", "text/html; charset=utf-8");
     $response->end(getTplContent());
 });
