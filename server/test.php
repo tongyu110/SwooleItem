@@ -1,6 +1,6 @@
 <?php
 
 function getTest() {
-    echo "Test \n";
+    echo "Test 2 \n";
 }
 
