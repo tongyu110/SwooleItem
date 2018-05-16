@@ -1,13 +1,21 @@
 <?php
 
-	$http = new swoole_http_server("0.0.0.0", 9501);
+        define('__ROOT__', realpath('.'));
 
-$http->on('request', function ($request, $response) {
-    var_dump($request->get, $request->post);
-    $response->header("Content-Type", "text/html; charset=utf-8");
-    $response->end("<h1>Hello Swoole. #".rand(1000, 9999)."</h1>");
-});
+	$http = new swoole_http_server("127.0.0.1", 9501);
+        $http->on('request', function ($request, $response) {
+            var_dump($request->get, $request->post);
+            $response->header("Content-Type", "text/html; charset=utf-8");
+            $response->end(getTplContent());
+        });
+        
+        $http->start();
 
-$http->start();
-
+        
+        function getTplContent() {
+            $file = __ROOT__ . '/Template/index.html';
+            $content = file_get_contents($file);
+            return $content;
+        }
+        
 ?>
