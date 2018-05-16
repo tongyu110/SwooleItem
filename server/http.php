@@ -1,28 +1,26 @@
 <?php
 
 echo 'shell start';
-
+include __ROOT__.'/test_shellstart.php';
 define('__ROOT__', realpath('.'));
-
 $http = new swoole_http_server("127.0.0.1", 9501);
 $http->set([
     'worker_num'=>4,
     'max_request'=>50
 ]);
 
+$serv->on('WorkerStart', function ($serv, $worker_id){
+    include __ROOT__.'/test_WorkerStart.php';
+});
+
 $http->on('request', function ($request, $response) {
     //var_dump($request->get, $request->post);
-    echo '111';    
-    include __ROOT__.'/test.php';
-    
+    include __ROOT__.'/test_request.php';
     $response->header("Content-Type", "text/html; charset=utf-8");
     $response->end(getTplContent());
 });
 $http->start();
 
 function getTplContent() {
-    return false;
-    $file = __ROOT__ . '/Template/index.html';
-    $content = file_get_contents($file);
-    return $content;
+    return "hello Swoole \n";
 }
