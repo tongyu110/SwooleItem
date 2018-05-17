@@ -1,7 +1,5 @@
 <?php
 
-
-
 echo 'shell start';
 define('__ROOT__', realpath('.'));
 include __ROOT__.'/test.php';
@@ -22,6 +20,13 @@ $http->on('request', function ($request, $response) {
     $response->header("Content-Type", "text/html; charset=utf-8");
     $response->end(getTplContent());
 });
+
+$http->on('Receive',function($server, $fd, $from_id, $data) {
+   $server->tick(1000, function() use ($server, $fd) {
+        echo $fd . "\n";
+    });
+});
+
 $http->start();
 
 function getTplContent() {
