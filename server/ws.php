@@ -18,8 +18,18 @@ class Ws  {
         $this->ws->on('message',[$this,'onMessage']);
         $this->ws->on('close',[$this,'onClose']);
         $this->ws->on('task',[$this,'onTask']);
-        
+        $this->ws->on("finish", [$this, 'onFinish']);
         $this->ws->start();
+    }
+    
+    /**
+     * @param $serv
+     * @param $taskId
+     * @param $data
+     */
+    public function onFinish($serv, $taskId, $data) {
+        echo "taskId:{$taskId}\n";
+        echo "finish-data-sucess:{$data}\n";
     }
     
     public function onTask(swoole_server $serv, int $task_id, int $src_worker_id, mixed $data) {
