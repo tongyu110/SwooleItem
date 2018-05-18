@@ -11,7 +11,7 @@ class Ws  {
         $this->ws->on('message',[$this,'onMessage']);
         $this->ws->on('close',[$this,'onClose']);
         
-        
+        $this->ws->start();
     }
     
     public function onClose($ws, $fd) {
