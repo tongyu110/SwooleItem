@@ -7,9 +7,9 @@ class Ws  {
     public function __construct() {
         $this->ws = new swoole_websocket_server("0.0.0.0", 8812);
         
-        $this->ws->on('open',[this,'onOpen']);
-        $this->ws->on('message',[this,'onMessage']);
-        $this->ws->on('close',[this,'onClose']);
+        $this->ws->on('open',[$this,'onOpen']);
+        $this->ws->on('message',[$this,'onMessage']);
+        $this->ws->on('close',[$this,'onClose']);
         
         
     }
