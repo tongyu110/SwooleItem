@@ -32,7 +32,7 @@ class Ws  {
         echo "finish-data-sucess:{$data}\n";
     }
     
-    public function onTask(swoole_server $serv, int $task_id, int $src_worker_id, mixed $data) {
+    public function onTask(swoole_server $serv,$task_id,$src_worker_id, $data) {
         print_r($data);
         // 耗时场景 10s
         sleep(10);
