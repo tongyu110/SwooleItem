@@ -45,6 +45,12 @@ class Ws  {
     
     public function onOpen(swoole_websocket_server $ws, swoole_http_request $req) {
         var_dump($req->fd);
+        if($req->fd == 1) {
+            // 每2秒执行
+            swoole_timer_tick(2000, function($timer_id){
+                echo "2s: timerId:{$timer_id}\n";
+            });
+        }
     }
     
     public function onMessage(swoole_websocket_server $ws, $frame) {
