@@ -4,10 +4,12 @@ echo 'shell start';
 define('__ROOT__', realpath('.'));
 include __ROOT__.'/test.php';
 
-$http = new swoole_http_server("127.0.0.1", 9501);
+$http = new swoole_http_server("0.0.0.0", 9501);
 $http->set([
     'worker_num'=>4,
-    'max_request'=>50
+    'max_request'=>50,
+    'document_root' => __ROOT__.'/../Template',
+    'enable_static_handler' => true,
 ]);
 
 $http->on('WorkerStart', function ($serv, $worker_id){
@@ -21,13 +23,6 @@ $http->on('request', function ($request, $response) {
     $response->end(getTplContent());
 });
 
-$http->on('receive',function($server, $fd, $from_id, $data) {
-   echo "tick start \n";
-   $server->tick(1000, function() use ($server, $fd) {
-        echo $fd . "\n";
-    });
-   echo "tick end \n";
-});
 
 $http->start();
 
