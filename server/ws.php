@@ -7,11 +7,26 @@ class Ws  {
     public function __construct() {
         $this->ws = new swoole_websocket_server("0.0.0.0", 8812);
         
+        $this->ws->set(
+            [
+                'worker_num' => 2,
+                'task_worker_num' => 2,
+            ]
+        );
+        
         $this->ws->on('open',[$this,'onOpen']);
         $this->ws->on('message',[$this,'onMessage']);
         $this->ws->on('close',[$this,'onClose']);
+        $this->ws->on('task',[$this,'onTask']);
         
         $this->ws->start();
+    }
+    
+    public function onTask(swoole_server $serv, int $task_id, int $src_worker_id, mixed $data) {
+        print_r($data);
+        // 耗时场景 10s
+        sleep(10);
+        return "on task finish"; // 告诉worker
     }
     
     public function onClose($ws, $fd) {
