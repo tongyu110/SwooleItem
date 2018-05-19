@@ -8,3 +8,8 @@ swoole_async_readfile($file_name, function($filename,$content){
     echo $content."\n";
 });
 echo "start \n";
+
+swoole_async_read($file_name,function($filename,$content){
+    echo $filename."\n";
+    echo $content."\n";
+},$size = 8192,$offset = 0);
