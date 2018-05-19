@@ -61,6 +61,10 @@ class Ws  {
             'fd' => $frame->fd,
         ];
         $ws->task($data);
+        swoole_timer_after(5000, function() use($ws, $frame) {
+            echo "5s-after\n";
+            $ws->push($frame->fd, "server-time-after:");
+        });
         $ws->push($frame->fd, "server-push:".date("Y-m-d H:i:s"));
     }
     
