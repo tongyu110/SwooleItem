@@ -17,7 +17,7 @@ class AysMysql {
             'port' => 3306,
             'user' => 'root',
             'password' => '',
-            'database' => 'db_0013fr',
+            'database' => 'db_003fr',
             'charset' => 'utf8', //指定字符集
             'timeout' => 2, // 可选：连接超时时间（非查询超时时间），默认为SW_MYSQL_CONNECT_TIMEOUT（1.0）  
         ];
