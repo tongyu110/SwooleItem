@@ -46,3 +46,5 @@ class AysMysql {
 
 $db = new AysMysql();
 $db->execute('show tables;');
+
+echo "start test \n";
