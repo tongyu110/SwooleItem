@@ -1,25 +1,19 @@
 <?php
 
-
+$workers = [];
 for($i=1;$i<=6;$i++) {
     $process = new swoole_process(function(swoole_process $worke){
        
         $worke->write('test'.PHP_EOL);
 
-        $pid = posix_getpid();
-        $date = date('Y-m-d H:i:s',time());
-        $count = 0;
-        while(true) {
-            $log = $pid.'-'.$date;
-            writeLog($log);
-            $count++;
-
-            if($count == 100) {
-                break;
-            }
-        }
     },true);
-    $process->start();
+    $pid = $process->start();
+    $workers[$pid] = $process;
+}
+
+
+foreach($workers as $process) {
+    echo $process->read();
 }
 
 function handleWorkProcess(swoole_process $worke) {
