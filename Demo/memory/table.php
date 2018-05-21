@@ -18,12 +18,10 @@ $table['singwa_imooc_2'] = [
     'age' => 31,
 ];
 
+for($i=3;$i<=1024;$i++) {
+    $table->set('singwa_imooc'.$i, ['id' => $i, 'name'=> 'singwa', 'age' => 30]);
+}
 
-$table->decr('singwa_imooc_2', 'age', 2);
-print_r($table['singwa_imooc_2']);
-
-echo "delete start:".PHP_EOL;
-$table->del('singwa_imooc_2');
 
 print_r($table['singwa_imooc_2']);
 
