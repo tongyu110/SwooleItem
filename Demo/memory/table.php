@@ -18,6 +18,8 @@ $table['singwa_imooc_2'] = [
     'age' => 31,
 ];
 
+$table->decr('singwa_imooc_2', 'age', 2);
+
 for($i=3;$i<=500;$i++) {
     sleep(1);
     $table['singwa_imooc_'.$i] = [

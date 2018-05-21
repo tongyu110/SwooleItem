@@ -1,0 +1,44 @@
+20180306 18:08:4320180306 18:10:0720180306 18:10:0920180306 18:10:0920180306 18:10:39
+20180306 18:10:40
+[Wed May 16 01:35:22.521346 2018] [ssl:warn] [pid 6824:tid 172] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+AH00112: Warning: DocumentRoot [E:/xampp-7/htdocs/www.php.me] does not exist
+AH00112: Warning: DocumentRoot [E:/xampp-7/htdocs/prestashop_1.7.2.4/prestashop] does not exist
+[Wed May 16 01:35:22.656354 2018] [ssl:warn] [pid 6824:tid 172] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 16 01:35:22.710357 2018] [mpm_winnt:notice] [pid 6824:tid 172] AH00354: Child: Starting 150 worker threads.
+[Wed May 16 01:40:24.652627 2018] [ssl:warn] [pid 19308:tid 156] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+AH00112: Warning: DocumentRoot [E:/xampp-7/htdocs/www.php.me] does not exist
+AH00112: Warning: DocumentRoot [E:/xampp-7/htdocs/prestashop_1.7.2.4/prestashop] does not exist
+[Wed May 16 01:40:24.690630 2018] [core:warn] [pid 19308:tid 156] AH00098: pid file E:/xampp-7/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed May 16 01:40:24.789635 2018] [ssl:warn] [pid 19308:tid 156] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 16 01:40:24.811636 2018] [mpm_winnt:notice] [pid 19308:tid 156] AH00455: Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/7.1.7 configured -- resuming normal operations
+[Wed May 16 01:40:24.811636 2018] [mpm_winnt:notice] [pid 19308:tid 156] AH00456: Apache Lounge VC14 Server built: Jun 15 2017 12:39:41
+[Wed May 16 01:40:24.811636 2018] [core:notice] [pid 19308:tid 156] AH00094: Command line: 'e:\\xampp-7\\apache\\bin\\httpd.exe -d E:/xampp-7/apache'
+[Wed May 16 01:40:24.816637 2018] [mpm_winnt:notice] [pid 19308:tid 156] AH00418: Parent: Created child process 19348
+AH00112: Warning: DocumentRoot [E:/xampp-7/htdocs/www.php.me] does not exist
+AH00112: Warning: DocumentRoot [E:/xampp-7/htdocs/prestashop_1.7.2.4/prestashop] does not exist
+[Wed May 16 01:40:25.940701 2018] [ssl:warn] [pid 19348:tid 172] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+AH00112: Warning: DocumentRoot [E:/xampp-7/htdocs/www.php.me] does not exist
+AH00112: Warning: DocumentRoot [E:/xampp-7/htdocs/prestashop_1.7.2.4/prestashop] does not exist
+[Wed May 16 01:40:26.086709 2018] [ssl:warn] [pid 19348:tid 172] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Wed May 16 01:40:26.112711 2018] [mpm_winnt:notice] [pid 19348:tid 172] AH00354: Child: Starting 150 worker threads.
+[Wed May 16 01:42:31.706894 2018] [php7:error] [pid 19348:tid 1688] [client 127.0.0.1:52426] script 'E:/xampp-7/htdocs/YiXi/System/www.content-manage.com/public/index.php' not found or unable to stat, referer: http://www.content-manage.com/index.php/Admin/Admin/login
+[Wed May 16 01:42:41.523456 2018] [php7:error] [pid 19348:tid 1648] [client 127.0.0.1:52441] script 'E:/xampp-7/htdocs/YiXi/System/www.content-manage.com/public/index.php' not found or unable to stat, referer: http://www.content-manage.com/public/static/js/jquery-ui/jquery-ui.min.css
+[Thu May 17 16:56:05.336265 2018] [ssl:warn] [pid 7712:tid 156] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+AH00112: Warning: DocumentRoot [E:/xampp-7/htdocs/www.php.me] does not exist
+AH00112: Warning: DocumentRoot [E:/xampp-7/htdocs/YiXi/System/www.wx-yixi1.com/public] does not exist
+AH00112: Warning: DocumentRoot [E:/xampp-7/htdocs/prestashop_1.7.2.4/prestashop] does not exist
+[Thu May 17 16:56:05.455272 2018] [core:warn] [pid 7712:tid 156] AH00098: pid file E:/xampp-7/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Thu May 17 16:56:05.573279 2018] [ssl:warn] [pid 7712:tid 156] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu May 17 16:56:07.859410 2018] [mpm_winnt:notice] [pid 7712:tid 156] AH00455: Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/7.1.7 configured -- resuming normal operations
+[Thu May 17 16:56:07.859410 2018] [mpm_winnt:notice] [pid 7712:tid 156] AH00456: Apache Lounge VC14 Server built: Jun 15 2017 12:39:41
+[Thu May 17 16:56:07.859410 2018] [core:notice] [pid 7712:tid 156] AH00094: Command line: 'e:\\xampp-7\\apache\\bin\\httpd.exe -d E:/xampp-7/apache'
+[Thu May 17 16:56:07.893412 2018] [mpm_winnt:notice] [pid 7712:tid 156] AH00418: Parent: Created child process 9212
+AH00112: Warning: DocumentRoot [E:/xampp-7/htdocs/www.php.me] does not exist
+AH00112: Warning: DocumentRoot [E:/xampp-7/htdocs/YiXi/System/www.wx-yixi1.com/public] does not exist
+AH00112: Warning: DocumentRoot [E:/xampp-7/htdocs/prestashop_1.7.2.4/prestashop] does not exist
+[Thu May 17 16:56:09.122482 2018] [ssl:warn] [pid 9212:tid 172] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+AH00112: Warning: DocumentRoot [E:/xampp-7/htdocs/www.php.me] does not exist
+AH00112: Warning: DocumentRoot [E:/xampp-7/htdocs/YiXi/System/www.wx-yixi1.com/public] does not exist
+AH00112: Warning: DocumentRoot [E:/xampp-7/htdocs/prestashop_1.7.2.4/prestashop] does not exist
+[Thu May 17 16:56:09.259490 2018] [ssl:warn] [pid 9212:tid 172] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Thu May 17 16:56:09.284491 2018] [mpm_winnt:notice] [pid 9212:tid 172] AH00354: Child: Starting 150 worker threads.
