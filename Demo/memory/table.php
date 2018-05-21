@@ -18,18 +18,18 @@ $table['singwa_imooc_2'] = [
     'age' => 31,
 ];
 
-for($i=3;$i<=1020;$i++) {
+for($i=3;$i<=800;$i++) {
     $table['singwa_imooc_'.$i] = [
     'id' => $i,
     'name' => 'singwa2',
     'age' => 31,
     ];
-    echo $i.PHP_EOL;
+    echo 'i-'.$i.PHP_EOL;
     $c = $table->count();
     if($c >= 1024) {
         die('Over');
     }
-    echo $table->count().PHP_EOL;
+    echo 'count-'.$table->count().PHP_EOL;
 }
 
 
