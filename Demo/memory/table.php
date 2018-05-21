@@ -18,7 +18,7 @@ $table['singwa_imooc_2'] = [
     'age' => 31,
 ];
 
-for($i=3;$i<=10;$i++) {
+for($i=3;$i<=1020;$i++) {
     $table['singwa_imooc_'.$i] = [
     'id' => $i,
     'name' => 'singwa2',
