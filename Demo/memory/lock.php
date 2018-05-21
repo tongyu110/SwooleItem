@@ -20,7 +20,7 @@ function handleWorkProcess(swoole_process $worke) {
 }
 
 function writeLog(String $content) {
-    $log_filename = __DIR__."/1.log";
+    $log_filename = __DIR__."/1.log \n";
     swoole_async_writefile($log_filename,$content,function($filename) {
         
     },FILE_APPEND);
