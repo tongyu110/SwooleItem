@@ -23,7 +23,13 @@ for($i=3;$i<=1020;$i++) {
     'id' => $i,
     'name' => 'singwa2',
     'age' => 31,
-];
+    ];
+    echo $i.PHP_EOL;
+    $c = $table->count();
+    if($c >= 1024) {
+        die('Over');
+    }
+    echo $table->count().PHP_EOL;
 }
 
 
