@@ -19,6 +19,7 @@ $table['singwa_imooc_2'] = [
 ];
 
 for($i=3;$i<=500;$i++) {
+    sleep(1);
     $table['singwa_imooc_'.$i] = [
     'id' => $i,
     'name' => 'singwa2',
