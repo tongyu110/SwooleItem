@@ -8,9 +8,8 @@ class AysMysql {
 
     private $dbConfig = [];
     private $dbSource = '';
-
+    
     public function __construct() {
-
         $this->dbSource = new Swoole\Mysql;
         $this->dbConfig = [
             'host' => 'localhost',
@@ -24,7 +23,6 @@ class AysMysql {
     }
 
     public function execute($sql) {
-
         $this->dbSource->connect($this->dbConfig, function ($db, $r) use ($sql) {
             if ($r === false) {
                 var_dump($db->connect_errno, $db->connect_error);
@@ -41,10 +39,9 @@ class AysMysql {
             });
         });
     }
-
+    
 }
 
 $db = new AysMysql();
 $db->execute('show tables;');
-
-echo "start test \n";
+echo "start test ".PHP_EOL;
