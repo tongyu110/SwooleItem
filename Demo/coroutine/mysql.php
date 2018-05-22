@@ -7,7 +7,9 @@ $http->set([
 ]);
 
 $http->on('request', function ($request, $response) {
-    
+   
+    $str = '1';
+ 
     $swoole_mysql = new Swoole\Coroutine\MySQL();
     $swoole_mysql->connect([
         'host' => '127.0.0.1',
@@ -16,10 +18,11 @@ $http->on('request', function ($request, $response) {
         'password' => '',
         'database' => 'db_003fr',
     ]);
-    $res = $swoole_mysql->query('select * from f3_rate;');
-    
+    $res = $swoole_mysql->query('select * from f3_rate;');    
+
+
     $response->header("Content-Type", "text/html; charset=utf-8");
-    $response->end(var_export($res));
+    $response->end($res[0]['id'].time());
 });
 
 $http->start();
