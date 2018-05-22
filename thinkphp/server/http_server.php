@@ -21,7 +21,7 @@ $http->on('WorkerStart',function($serv, $worker_id){
     require __DIR__ . '/../thinkphp/base.php';
 });
 
-$http->on('request', function($request, $response) {
+$http->on('request', function($request, $response) use ($http) {
     
     
     if(isset($request->server)) {
@@ -35,6 +35,10 @@ $http->on('request', function($request, $response) {
             $_SERVER[strtoupper($k)] = $v;
         }
     }
+    // 1. 全局变量在 swoole 中是不会注销的，包括常量
+    //if(!empty($request->get)) {
+    //    unset($request->get);
+    //}
     
     if(isset($request->get)) {
         foreach($request->get as $k=>$v) {
@@ -50,14 +54,23 @@ $http->on('request', function($request, $response) {
     
     ob_start();
     // 执行应用并响应
-    think\Container::get('app', [APP_PATH])
-    ->run()
-    ->send();
+    try{
+        // 执行应用并响应
+        think\Container::get('app', [APP_PATH])
+        ->run()
+        ->send();
+    }catch(\Exception $e) {
+        //todo
+    }
     
     $re = ob_get_contents();
     ob_end_clean();
     
+    $response->header("Content-Type", "text/html; charset=utf-8");
     $response->end($re);
+    $http->close();
+    // 2. 如果没有 close ，不同地址访问都是同样的结果，因为在 Thinkphp 中会将缓存
+    
 });
 
 $http->start();
