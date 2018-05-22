@@ -25,25 +25,25 @@ $http->on('request', function($request, $response) {
     
     
     if(isset($request->server)) {
-        foreach(($request->server as $k=>$v) {
+        foreach($request->server as $k=>$v) {
             $_SERVER[strtoupper($k)] = $v;
         }
     }
     
     if(isset($request->header)) {
-        foreach(($request->header as $k=>$v) {
+        foreach($request->header as $k=>$v) {
             $_SERVER[strtoupper($k)] = $v;
         }
     }
     
     if(isset($request->get)) {
-        foreach(($request->get as $k=>$v) {
+        foreach($request->get as $k=>$v) {
             $_GET[$k] = $v;
         }
     }
     
     if(isset($request->post)) {
-        foreach(($request->post as $k=>$v) {
+        foreach($request->post as $k=>$v) {
             $_POST[$k] = $v;
         }
     }
