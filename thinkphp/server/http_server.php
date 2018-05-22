@@ -16,7 +16,7 @@ $http->set(
     ]
 );
 
-$thtp->on('WorkerStart',function($serv, $worker_id){
+$http->on('WorkerStart',function($serv, $worker_id){
     
     define('APP_PATH', __DIR__ . '/../application/');
     require __DIR__ . '/../thinkphp/base.php';
